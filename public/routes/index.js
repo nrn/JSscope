@@ -18,6 +18,15 @@ module.exports = function () {
         , 'of learning about scope in JavaScript.'
         ].join(' ')
       )
+    , f.div(
+      [ "A quick overview of scope in JavaScript, we'll look at this all in"
+      , 'detail in a second:'
+      , 'Any variable available in the scope in which a function is declared'
+      , 'is available inside that function. Declaring something new in a scope'
+      , 'shadows any outer uses of the same name, rendering them unreachable.'
+      , 'Functions are the only unit of scope, other blocks are part of the'
+      , 'function they are contained within.'
+      ].join(' ')
     ]
   )
 }
