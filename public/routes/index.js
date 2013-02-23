@@ -26,7 +26,7 @@ module.exports = function () {
       , 'shadows any outer uses of the same name, rendering them unreachable.'
       , 'Functions are the only unit of scope, other blocks are part of the'
       , 'function they are contained within.'
-      ].join(' ')
+      ].join(' '))
     ]
   )
 }
