@@ -26,6 +26,9 @@ module.exports = function () {
       , 'shadows any outer uses of the same name, rendering them unreachable.'
       , 'Functions are the only unit of scope, other blocks are part of the'
       , 'function they are contained within.'
+      , 'All arguments to a function are declared inside that scope'
+      , 'if they are set or not. Along with the magical "this" and'
+      , '"arguments" variables.'
       ].join(' '))
     ]
   )
