@@ -30,6 +30,15 @@ module.exports = function () {
       , 'if they are set or not. Along with the magical "this" and'
       , '"arguments" variables.'
       ].join(' '))
+    , f.div(
+      [ 'One way to thing about scope is as a series of concentric circles'
+      , 'with the inner circles able to acces the variables in all outer'
+      , 'circles, but outer circles not able to get to the inner ones.'
+      , 'These outer circles are always availible whenever the function'
+      , 'is invoked, even if it has been returned out of the scope it'
+      , 'was defined in. This is know as closure, and it allows many of'
+      , 'the poweful abstractions used in JavaScript.'
+      ].join(' '))
     ]
   )
 }
