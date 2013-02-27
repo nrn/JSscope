@@ -54,6 +54,37 @@ module.exports = function () {
           , 'console.log(a) // 3'
           ].join('\n'))
         ].join(' '))
+      , f.p(
+        [ 'Inner scope shadows outer:'
+        , f.pre({ class: 'example'},
+          [ 'var a = 0'
+          , 'function inner () {'
+          , '  var a = 1'
+          , '  console.log(a)'
+          , '}'
+          , ''
+          , 'inner() // 1'
+          , 'console.log(a) // 0'
+          ].join('\n'))
+        ].join(' '))
+      , f.p(
+        [ 'Closure:'
+        , f.pre({ class: 'example'},
+          [ ''
+          , 'function inner () {'
+          , '  var a = 0'
+          , '  return function () {'
+          , '    a += 1'
+          , '    console.log(a)'
+          , '  }'
+          , '}'
+          , ''
+          , 'var b = inner()'
+          , 'b() // 1'
+          , 'b() // 2'
+          , 'b() // 3'
+          ].join('\n'))
+        ].join(' '))
       ]
     ) + scripts.map(function (script) {
       return f.script({ src: script })
