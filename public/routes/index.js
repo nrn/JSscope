@@ -85,6 +85,12 @@ module.exports = function () {
           , 'b() // 3'
           ].join('\n'))
         ].join(' '))
+      , f.p(
+        [ 'If a variable used, but not declared in a scope then'
+        , 'it will be looked up in each outer scope until it is'
+        , 'found and that one will be used. If it is not found then'
+        , 'it will be automatically declared as a global variable.'
+        ].join(' '))
       ]
     ) + scripts.map(function (script) {
       return f.script({ src: script })
