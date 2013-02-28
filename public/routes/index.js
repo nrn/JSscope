@@ -1,7 +1,6 @@
 var f = require('flates')
   , scripts =
     [ '/dep/jquery.min.js'
-    , '/dep/Bacon.min.js'
     , '/client.js'
     ]
 
