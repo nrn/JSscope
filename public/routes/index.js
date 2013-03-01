@@ -1,14 +1,22 @@
 var f = require('flates')
   , scripts =
     [ '/dep/jquery.min.js'
+    , '/dep/foundation.min.js'
     , '/client.js'
     ]
+  , links =
+    [ '/dep/normalize.css'
+    , '/dep/foundation.css'
+    , '/style.css'
+    ]
+  , example = { class: 'example large-10 large-offset-1 coloums'}
 
 module.exports = function () {
-  return f.d() + f.link({href: '/style.css', rel: 'stylesheet' }) +
-    f.div(
+  return f.d() + links.map(function(link) {
+    return f.link({href: link, rel: 'stylesheet' })
+  }).join('') + f.div({ class: 'row' },
       [ f.h1('JS scope')
-      , 'An attempt to explain lexical, block level scope.'
+      , f.p('An attempt to explain lexical, block level scope.')
       , f.aside({ class: 'warning'},
           [ 'This website is serving as a playground for some odd technology'
           , 'with the intention that it will one day be suitable for the purpose'
@@ -39,7 +47,7 @@ module.exports = function () {
       , f.p('Insert demo here')
       , f.p(
         [ 'The inner function can always acces the outer scope:'
-        , f.pre({ class: 'example'},
+        , f.pre(example,
           [ 'var a = 0'
           , 'function inner () {'
           , '  a += 1'
@@ -55,7 +63,7 @@ module.exports = function () {
         ].join(' '))
       , f.p(
         [ 'Inner scope shadows outer:'
-        , f.pre({ class: 'example'},
+        , f.pre(example,
           [ 'var a = 0'
           , 'function inner () {'
           , '  var a = 1'
@@ -68,7 +76,7 @@ module.exports = function () {
         ].join(' '))
       , f.p(
         [ 'Closure:'
-        , f.pre({ class: 'example'},
+        , f.pre(example,
           [ ''
           , 'function inner () {'
           , '  var a = 0'
